@@ -59,7 +59,7 @@
     "message": "WebRTC deaktiviert / geschützt"
   },
   "dnsOk": {
-    "message": "Normal (Antwort: $latency$ms)",
+    "message": "Normal (Antwort: $latency$ ms)",
     "placeholders": {
       "latency": {
         "content": "$1",

@@ -59,7 +59,7 @@
     "message": "WebRTC 無効化 / 保護中"
   },
   "dnsOk": {
-    "message": "正常 (応答: $latency$ms)",
+    "message": "正常 (応答: $latency$ ms)",
     "placeholders": {
       "latency": {
         "content": "$1",

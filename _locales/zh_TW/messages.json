@@ -59,7 +59,7 @@
     "message": "瀏覽器 WebRTC 已停用/受保護"
   },
   "dnsOk": {
-    "message": "解析正常 (回應延遲: $latency$ms)",
+    "message": "解析正常 (回應延遲: $latency$ ms)",
     "placeholders": {
       "latency": {
         "content": "$1",
