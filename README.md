@@ -1,4 +1,5 @@
-# Zgyet - Lightweight Outbound IP & Gateway Inspector
+# Zgyet - 网络出口与网关助手 / Outbound IP & Gateway Inspector
+> 🌐 专为 Chrome 与 Edge 打造的高性能、轻量级 Manifest V3 浏览器扩展。  
 > 🌐 A high-performance, privacy-first Manifest V3 browser extension for Chrome & Edge.
 
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue.svg)](https://developer.chrome.com/docs/extensions/mv3/)
