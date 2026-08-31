@@ -138,5 +138,14 @@
   },
   "candidateLabel": {
     "message": "IPs candidates :"
+  },
+  "dnsLeakSafe": {
+    "message": "🛡️ DNS protégé · Aucune fuite / Propre"
+  },
+  "dnsLeakWarn": {
+    "message": "⚠️ Fuite DNS détectée (Résolution via FAI local)"
+  },
+  "dnsPollutedWarn": {
+    "message": "🚨 Suspicion de détournement / pollution DNS"
   }
 }

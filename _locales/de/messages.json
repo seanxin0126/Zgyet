@@ -138,5 +138,14 @@
   },
   "candidateLabel": {
     "message": "Kandidaten-IPs:"
+  },
+  "dnsLeakSafe": {
+    "message": "🛡️ DNS geschützt · Kein Leak / Sauber"
+  },
+  "dnsLeakWarn": {
+    "message": "⚠️ DNS-Leak erkannt (Auflösung über lokalen ISP)"
+  },
+  "dnsPollutedWarn": {
+    "message": "🚨 Verdacht auf DNS-Hijacking / Manipulation"
   }
 }

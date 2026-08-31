@@ -101,6 +101,8 @@ async function runDiagnostics() {
   }
 }
 
+let detectedOutboundInfo = { ip: "", country: "", countryCode: "" };
+
 // 3. Outbound IP & Geo Location Fetcher (High Speed Multi-Fallback + Silent Handling)
 async function fetchOutboundIP(startTime) {
   let data = null;
@@ -178,6 +180,12 @@ async function fetchOutboundIP(startTime) {
   const ipVerBadge = document.getElementById("ip-version-badge");
 
   if (data && data.ip) {
+    detectedOutboundInfo = {
+      ip: data.ip,
+      country: data.country || "",
+      countryCode: (data.country_code || data.countryCode || "").toUpperCase()
+    };
+
     ipEl.textContent = data.ip;
     latencyEl.textContent = `${latency} ms`;
     latencyEl.className = getLatencyBadgeClass(latency);
@@ -205,6 +213,7 @@ async function fetchOutboundIP(startTime) {
     const asn = (data.connection && data.connection.asn) ? ` (${data.connection.asn})` : "";
     ispEl.textContent = `${rawIsp}${asn}`;
   } else {
+    detectedOutboundInfo = { ip: "", country: "", countryCode: "" };
     ipEl.textContent = msg("detecting", "Timeout / Offline");
     geoEl.textContent = "Location unavailable";
     ispEl.textContent = "--";
@@ -224,12 +233,12 @@ function detectWebRTCLeak() {
         iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
       });
 
-      let hasResolved = false;
       const ips = new Set();
+      let finished = false;
 
       function finalize() {
-        if (hasResolved) return;
-        hasResolved = true;
+        if (finished) return;
+        finished = true;
 
         try { rtc.close(); } catch (e) {}
 
@@ -332,6 +341,7 @@ async function detectDNSInfo() {
 
   let dnsLatency = null;
   let dnsIp = null;
+  let dnsGeo = "";
 
   // 1. Measure Latency
   const latencyPromise = (async () => {
@@ -353,14 +363,15 @@ async function detectDNSInfo() {
     }
   })();
 
-  // 2. Fetch Recursive DNS Resolver IP
+  // 2. Fetch Recursive DNS Resolver IP & Geo
   const resolverIpPromise = (async () => {
     try {
       const res = await fetch("https://edns.ip-api.com/json", { cache: "no-store", signal: AbortSignal.timeout(3000) });
       if (res.ok) {
         const data = await res.json();
-        if (data && data.dns && data.dns.ip) {
-          dnsIp = data.dns.ip;
+        if (data && data.dns) {
+          if (data.dns.ip) dnsIp = data.dns.ip;
+          if (data.dns.geo) dnsGeo = data.dns.geo;
         }
       }
     } catch (e) {}
@@ -385,6 +396,27 @@ async function detectDNSInfo() {
     }
   }
 
+  // Determine Leak & Pollution status
+  let secText = "";
+  let secClass = "";
+
+  const isOverseasOutbound = detectedOutboundInfo.countryCode && detectedOutboundInfo.countryCode !== "CN";
+  const isChinaDns = dnsGeo && (dnsGeo.toLowerCase().includes("china") || dnsGeo.toLowerCase().includes("cn -"));
+
+  if (isOverseasOutbound && isChinaDns) {
+    // DNS Leak detected (Outbound is overseas proxy, but DNS queries leak to domestic China ISP)
+    secText = msg("dnsLeakWarn", "⚠️ DNS Leak: Requests exposed to local ISP");
+    secClass = "dns-sec-warn";
+  } else if (dnsIp || dnsLatency !== null) {
+    // Normal / Clean
+    secText = msg("dnsLeakSafe", "🛡️ DNS Protected · Clean & No Leak");
+    secClass = "dns-sec-safe";
+  } else {
+    // Intercepted / Suspected Hijacking
+    secText = msg("dnsPollutedWarn", "🚨 Suspected DNS Hijacking / Intercepted");
+    secClass = "dns-sec-danger";
+  }
+
   if (dnsIp) {
     dnsEl.innerHTML = `
       <div class="webrtc-ip-row" style="margin-top: 3px;">
@@ -392,18 +424,21 @@ async function detectDNSInfo() {
         <span class="webrtc-ip-text">${escapeHtml(dnsIp)}</span>
       </div>
       <div class="dns-sub-status">${latencyStr}</div>
+      <div class="dns-sec-status ${secClass}">${escapeHtml(secText)}</div>
     `;
-    dnsStatus.className = statusIndicatorClass;
+    dnsStatus.className = (secClass === "dns-sec-warn") ? "status-indicator status-warning" : statusIndicatorClass;
   } else if (dnsLatency !== null) {
     dnsEl.innerHTML = `
       <div class="dns-sub-status">${latencyStr}</div>
+      <div class="dns-sec-status ${secClass}">${escapeHtml(secText)}</div>
     `;
     dnsStatus.className = statusIndicatorClass;
   } else {
     dnsEl.innerHTML = `
       <div class="dns-sub-status">${msg("dnsCustom", "Local Gateway / Proxy Managed")}</div>
+      <div class="dns-sec-status ${secClass}">${escapeHtml(secText)}</div>
     `;
-    dnsStatus.className = "status-indicator status-ok";
+    dnsStatus.className = "status-indicator status-warning";
   }
 }
 

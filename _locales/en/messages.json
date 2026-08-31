@@ -138,5 +138,14 @@
   },
   "candidateLabel": {
     "message": "Candidate IPs:"
+  },
+  "dnsLeakSafe": {
+    "message": "🛡️ DNS Protected · Clean & No Leak"
+  },
+  "dnsLeakWarn": {
+    "message": "⚠️ DNS Leak: Requests exposed to local ISP"
+  },
+  "dnsPollutedWarn": {
+    "message": "🚨 Suspected DNS Hijacking / Intercepted"
   }
 }
