@@ -190,11 +190,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* IP Card */
-.ip-card {
-  border-left: 3px solid var(--accent);
-}
-
 .ip-display-row {
   display: flex;
   align-items: center;
