@@ -20,6 +20,13 @@
 - 🌐 **全自动多语言国际化**：内置 8 国语言包（简体中文、繁体中文、英语、日语、韩语、德语、西班牙语、法语），跟随系统语言自动切换。
 - 🪶 **极致轻量无依赖**：纯原生 JS 与 CSS 编写，零第三方依赖库，总体积不足 35 KB。
 
+### 📸 界面预览
+<div align="center">
+  <img src="assets/screenshot-outbound.png" alt="出口链路与防泄漏" width="31%" />
+  <img src="assets/screenshot-gateways.png" alt="常用局域网网关" width="31%" />
+  <img src="assets/screenshot-tools.png" alt="网络排障速查" width="31%" />
+</div>
+
 ---
 
 ## 🚀 安装与本地加载步骤
