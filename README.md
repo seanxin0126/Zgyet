@@ -4,7 +4,7 @@
 
 > 🌐 A high-performance, privacy-first Manifest V3 browser extension for Chrome & Edge.
 
-[![Version: v1.0.3](https://img.shields.io/badge/version-v1.0.3-blue.svg)](https://github.com/seanxin0126/Zgyet)
+[![Version: v1.0.4](https://img.shields.io/badge/version-v1.0.4-blue.svg)](https://github.com/seanxin0126/Zgyet)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg)](https://developer.chrome.com/docs/extensions/mv3/)
 [![Pure Vanilla](https://img.shields.io/badge/Dependencies-0%20Zero-green.svg)](https://github.com/seanxin0126/Zgyet)
 [![Multi-language](https://img.shields.io/badge/i18n-8%20Languages-cyan.svg)](_locales)
@@ -37,7 +37,13 @@
 
 ### 📝 Changelog
 
-#### v1.0.3 (Latest)
+#### v1.0.4 (Latest)
+- 🔒 **Security Hardening**: Gateway URL protocol whitelist — blocks `javascript:` / `data:` XSS injection attacks, defends against Chrome Storage poisoning.
+- 🛡️ **Anchor Tag Fortification**: Added `rel="noopener noreferrer"` to all gateway links and escaped `gw.id` to prevent DOM injection.
+- 🐛 **Bug Fixes**: Removed duplicate `escapeHtml()` definition (potential `TypeError` on `undefined`), deleted orphaned `getCountryFlagEmoji()` dead code.
+- 🎨 **CSS Variable Fix**: Added missing `--accent-text` CSS variable — version badge and DNS tag now display correct accent color.
+
+#### v1.0.3
 - ✨ **DNS Security Line**: Added real-time DNS leak and hijacking/pollution detection line with full 8-language localization.
 - ⚡ **DNS IP & Dynamic Latency**: Displays recursive DNS server IP and 3-stage latency color coding (`<450ms` green, `450-1000ms` yellow, `>1000ms` red).
 - 🛡️ **Zero Console Errors**: Upgraded to multi-fallback IP discovery endpoints with silent error handling to ensure clean logs in Chrome extension manager.
@@ -93,7 +99,13 @@
 
 ### 📝 更新日志 (Changelog)
 
-#### v1.0.3 (最新版本)
+#### v1.0.4 (最新版本)
+- 🔒 **安全加固**：网关链接协议白名单机制 —— 阻断 `javascript:` / `data:` XSS 注入攻击，防御 Chrome Storage 数据投毒。
+- 🛡️ **锚点标签强化**：所有网关链接添加 `rel="noopener noreferrer"` 反向引用防护，`gw.id` 增加转义防止 DOM 注入。
+- 🐛 **Bug 修复**：消除重复 `escapeHtml()` 定义（修复 `undefined` 潜在 TypeError），清理未调用的 `getCountryFlagEmoji()` 死代码。
+- 🎨 **CSS 变量修复**：补充缺失的 `--accent-text` CSS 变量，版本号标签与 DNS 标签恢复正确的青色显示。
+
+#### v1.0.3
 - ✨ **DNS 安全检测行**：新增实时 DNS 泄露与劫持/污染检测状态行，支持 8 种语言本地化提示。
 - ⚡ **DNS 服务器 IP 与色彩阈值**：实装递归 DNS 解析服务器 IP 展示及响应延迟三段式变色提示（`<450ms` 绿色、`450-1000ms` 黄色、`>1000ms` 红色）。
 - 🛡️ **后台 0 报警优化**：接入三级高速容灾出口探测引擎，采用静默异常处理，确保扩展管理页 0 错误、0 警告。
