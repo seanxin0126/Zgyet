@@ -41,12 +41,12 @@
         <div class="ip-display-row">
           <div class="ip-text-wrap">
             <span id="outbound-ip" class="ip-value" data-i18n="detecting">Detecting...</span>
-            <span id="ip-version-badge" class="badge badge-accent">IP</span>
+            <div class="ip-badges">
+              <span id="ip-version-badge" class="badge badge-accent">IP</span>
+              <span id="latency-badge" class="badge badge-neutral">-- ms</span>
+            </div>
           </div>
-          <div class="ip-actions">
-            <span id="latency-badge" class="badge badge-neutral">-- ms</span>
-            <button id="btn-copy-ip" class="btn-sm" data-i18n="btnCopy" title="Copy IP">Copy</button>
-          </div>
+          <button id="btn-copy-ip" class="btn-sm" data-i18n="btnCopy" title="Copy IP">Copy</button>
         </div>
         <div class="meta-row">
           <div class="meta-item">

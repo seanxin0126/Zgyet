@@ -199,7 +199,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
 }
 
 .ip-text-wrap {
@@ -211,10 +211,10 @@ body {
   min-width: 0;
 }
 
-.ip-actions {
-  display: flex;
+.ip-badges {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   flex-shrink: 0;
 }
 
@@ -243,6 +243,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 1.2;
 }
 
 .badge-neutral {
@@ -279,11 +280,13 @@ body {
   color: var(--text-main);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 4px 8px;
+  padding: 3px 9px;
   font-size: 11px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-sm:hover {
