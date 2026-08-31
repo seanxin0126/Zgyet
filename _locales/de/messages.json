@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - Ausgehende IP & Gateway-Inspektor"
+  },
+  "appDesc": {
+    "message": "Leichte Erkennung von ausgehenden IPs, DNS- & WebRTC-Leaks mit LAN-Gateway-Verknüpfungen."
+  },
+  "actionTitle": {
+    "message": "Zgyet Netzwerkdiagnose"
+  },
+  "subtitle": {
+    "message": "Netzwerk & Gateway-Inspektor"
+  },
+  "refresh": {
+    "message": "Aktualisieren"
+  },
+  "tabRoute": {
+    "message": "Ausgehend"
+  },
+  "tabLan": {
+    "message": "Gateways"
+  },
+  "tabTools": {
+    "message": "Tools"
+  },
+  "outboundLabel": {
+    "message": "Öffentliche IP (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "Erkennung..."
+  },
+  "querying": {
+    "message": "Abfrage..."
+  },
+  "btnCopy": {
+    "message": "Kopieren"
+  },
+  "securityLabel": {
+    "message": "Sicherheit & Leak-Erkennung"
+  },
+  "webrtcTitle": {
+    "message": "WebRTC IP Leak-Prüfung"
+  },
+  "dnsTitle": {
+    "message": "DNS-Auflösung"
+  },
+  "webrtcSafe": {
+    "message": "Geschützt (Kein Leak)"
+  },
+  "webrtcCandidate": {
+    "message": "Kandidat IP: $",
+    "placeholders": {
+      "ips": {
+        "content": ""
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "WebRTC deaktiviert / geschützt"
+  },
+  "dnsOk": {
+    "message": "Normal (Antwort: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "Lokales Gateway / Proxy"
+  },
+  "lanHeader": {
+    "message": "LAN & Homelab Gateways"
+  },
+  "addGateway": {
+    "message": "+ Hinzufügen"
+  },
+  "gwNamePlaceholder": {
+    "message": "Name (z.B. Router)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "IP (z.B. 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "Netzwerk-Diagnosebefehle"
+  },
+  "cmd1Desc": {
+    "message": "Öffentliche IP prüfen"
+  },
+  "cmd2Desc": {
+    "message": "DNS-Cache leeren (Windows)"
+  },
+  "cmd3Desc": {
+    "message": "Route verfolgen (Tracert)"
+  },
+  "cmd4Desc": {
+    "message": "Nameserver abfragen"
+  },
+  "copied": {
+    "message": "In die Zwischenablage kopiert"
+  },
+  "ipCopied": {
+    "message": "IP kopiert"
+  },
+  "cmdCopied": {
+    "message": "Befehl kopiert"
+  },
+  "gwAdded": {
+    "message": "Gateway hinzugefügt"
+  },
+  "gwDeleted": {
+    "message": "Gateway entfernt"
+  },
+  "enterGwAlert": {
+    "message": "Bitte Name und Adresse eingeben"
+  },
+  "footerTip": {
+    "message": "Keine Abhängigkeiten · Lokal · Ultraschnell"
+  },
+  "enterBtn": {
+    "message": "Öffnen"
+  },
+  "gwOpenwrt": {
+    "message": "Soft-Router-Adresse"
+  },
+  "gwMain": {
+    "message": "Haupt-Router-Adresse"
+  },
+  "gwProxy": {
+    "message": "Neben-Router-Adresse"
+  },
+  "locationLabel": {
+    "message": "Land / Region: "
+  },
+  "ispLabel": {
+    "message": "ISP-Name: "
+  },
+  "candidateLabel": {
+    "message": "Kandidaten-IPs:"
+  }
+}

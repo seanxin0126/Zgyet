@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - 網路出口與閘道助手"
+  },
+  "appDesc": {
+    "message": "輕量級網路出口 IP、DNS 與 WebRTC 洩漏檢測，搭配區域網路閘道直達與網路排障工具箱。"
+  },
+  "actionTitle": {
+    "message": "Zgyet 網路診斷"
+  },
+  "subtitle": {
+    "message": "網路出口與閘道助手"
+  },
+  "refresh": {
+    "message": "重新整理"
+  },
+  "tabRoute": {
+    "message": "出口線路"
+  },
+  "tabLan": {
+    "message": "區域閘道"
+  },
+  "tabTools": {
+    "message": "速查工具"
+  },
+  "outboundLabel": {
+    "message": "當前公網出口 (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "正在探測..."
+  },
+  "querying": {
+    "message": "查詢中..."
+  },
+  "btnCopy": {
+    "message": "複製"
+  },
+  "securityLabel": {
+    "message": "線路安全與洩漏探測"
+  },
+  "webrtcTitle": {
+    "message": "WebRTC 真實 IP 探測"
+  },
+  "dnsTitle": {
+    "message": "DNS 解析伺服器"
+  },
+  "webrtcSafe": {
+    "message": "安全 (未發現真實 IP 洩漏)"
+  },
+  "webrtcCandidate": {
+    "message": "候選 IP: $",
+    "placeholders": {
+      "ips": {
+        "content": ""
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "瀏覽器 WebRTC 已停用/受保護"
+  },
+  "dnsOk": {
+    "message": "解析正常 (回應延遲: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "由本地閘道/分流規則接管"
+  },
+  "lanHeader": {
+    "message": "常用區域網路閘道直達"
+  },
+  "addGateway": {
+    "message": "+ 新增"
+  },
+  "gwNamePlaceholder": {
+    "message": "名稱 (例: 軟路由)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "位址 (例: 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "網路排障常用指令"
+  },
+  "cmd1Desc": {
+    "message": "查看出口公網 IP (終端快速測試)"
+  },
+  "cmd2Desc": {
+    "message": "重新整理本機 DNS 快取 (Windows)"
+  },
+  "cmd3Desc": {
+    "message": "路由追蹤與節點探測"
+  },
+  "cmd4Desc": {
+    "message": "查詢指定網域名稱伺服器"
+  },
+  "copied": {
+    "message": "已複製到剪貼簿"
+  },
+  "ipCopied": {
+    "message": "IP 已複製"
+  },
+  "cmdCopied": {
+    "message": "指令已複製"
+  },
+  "gwAdded": {
+    "message": "閘道新增成功"
+  },
+  "gwDeleted": {
+    "message": "已刪除閘道"
+  },
+  "enterGwAlert": {
+    "message": "請輸入閘道名稱和位址"
+  },
+  "footerTip": {
+    "message": "極簡零相依 · 純本地運行 · 毫秒級載入"
+  },
+  "enterBtn": {
+    "message": "進入"
+  },
+  "gwOpenwrt": {
+    "message": "軟路由位址"
+  },
+  "gwMain": {
+    "message": "主路由位址"
+  },
+  "gwProxy": {
+    "message": "旁路由位址"
+  },
+  "locationLabel": {
+    "message": "國家與地區："
+  },
+  "ispLabel": {
+    "message": "電信商名稱："
+  },
+  "candidateLabel": {
+    "message": "候選 IP："
+  }
+}

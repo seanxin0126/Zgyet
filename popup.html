@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zgyet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="icons/icon48.png" class="logo-img" alt="Zgyet" width="32" height="32">
+        <div>
+          <h1 class="title">Zgyet</h1>
+          <span class="subtitle" data-i18n="subtitle">Network & Gateway Inspector</span>
+        </div>
+      </div>
+      <button id="btn-refresh" class="icon-btn" data-i18n-title="refresh" title="Refresh">
+        <svg class="spin-icon" viewBox="0 0 24 24" width="16" height="16">
+          <path fill="currentColor" d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="tab-route" data-i18n="tabRoute">Outbound</button>
+      <button class="tab-btn" data-tab="tab-lan" data-i18n="tabLan">Gateways</button>
+      <button class="tab-btn" data-tab="tab-tools" data-i18n="tabTools">Tools</button>
+    </nav>
+
+    <!-- Tab 1: Outbound & Leak Inspector -->
+    <main id="tab-route" class="tab-content active">
+      <!-- Main IP Card -->
+      <section class="card ip-card">
+        <div class="card-header">
+          <span class="card-label" data-i18n="outboundLabel">Outbound Public IP (IPv4/IPv6)</span>
+          <span id="latency-badge" class="badge badge-neutral">-- ms</span>
+        </div>
+        <div class="ip-display-row">
+          <div class="ip-text-wrap">
+            <span id="outbound-ip" class="ip-value" data-i18n="detecting">Detecting...</span>
+            <span id="ip-version-badge" class="badge badge-accent">IP</span>
+          </div>
+          <button id="btn-copy-ip" class="btn-sm" data-i18n="btnCopy" title="Copy IP">Copy</button>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <span class="meta-label" data-i18n="locationLabel">Country / Region: </span>
+            <span id="geo-location" class="meta-value" data-i18n="querying">Querying...</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" data-i18n="ispLabel">ISP / Provider: </span>
+            <span id="isp-name" class="meta-value">--</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security & Leak Cards -->
+      <section class="card leak-card">
+        <div class="card-header">
+          <span class="card-label" data-i18n="securityLabel">Security & Leak Detection</span>
+        </div>
+        <div class="leak-item">
+          <div class="leak-info">
+            <span class="leak-title" data-i18n="webrtcTitle">WebRTC IP Leak Check</span>
+            <span id="webrtc-ip" class="leak-detail" data-i18n="detecting">Detecting...</span>
+          </div>
+          <span id="webrtc-status" class="status-indicator status-detecting"></span>
+        </div>
+        <div class="leak-item">
+          <div class="leak-info">
+            <span class="leak-title" data-i18n="dnsTitle">DNS Resolution</span>
+            <span id="dns-server" class="leak-detail" data-i18n="detecting">Detecting...</span>
+          </div>
+          <span id="dns-status" class="status-indicator status-ok"></span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Tab 2: LAN Gateways & Homelab -->
+    <main id="tab-lan" class="tab-content">
+      <section class="card">
+        <div class="card-header">
+          <span class="card-label" data-i18n="lanHeader">Quick LAN & Homelab Gateways</span>
+        </div>
+        <div class="gateway-list" id="gateway-list">
+          <!-- Gateways will be rendered here dynamically -->
+        </div>
+
+        <div class="add-gateway-box">
+          <div class="add-gw-inputs">
+            <input type="text" id="custom-gw-name" data-i18n-placeholder="gwNamePlaceholder" placeholder="Name (e.g. Router)" maxlength="16">
+            <input type="text" id="custom-gw-url" data-i18n-placeholder="gwUrlPlaceholder" placeholder="IP (e.g. 192.168.1.1)" maxlength="40">
+          </div>
+          <button id="btn-add-gw" class="btn-primary-block" data-i18n="addGateway">+ Add</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Tab 3: Network Tools -->
+    <main id="tab-tools" class="tab-content">
+      <section class="card">
+        <div class="card-header">
+          <span class="card-label" data-i18n="toolsHeader">Network Troubleshooting Commands</span>
+        </div>
+        <div class="commands-list">
+          <div class="cmd-item">
+            <div class="cmd-desc" data-i18n="cmd1Desc">Check public IP (Quick terminal test)</div>
+            <div class="cmd-code-row">
+              <code>curl -s ifconfig.me</code>
+              <button class="btn-copy-cmd" data-cmd="curl -s ifconfig.me" data-i18n="btnCopy">Copy</button>
+            </div>
+          </div>
+          <div class="cmd-item">
+            <div class="cmd-desc" data-i18n="cmd2Desc">Flush local DNS cache (Windows)</div>
+            <div class="cmd-code-row">
+              <code>ipconfig /flushdns</code>
+              <button class="btn-copy-cmd" data-cmd="ipconfig /flushdns" data-i18n="btnCopy">Copy</button>
+            </div>
+          </div>
+          <div class="cmd-item">
+            <div class="cmd-desc" data-i18n="cmd3Desc">Trace route & network hops</div>
+            <div class="cmd-code-row">
+              <code>tracert 1.1.1.1</code>
+              <button class="btn-copy-cmd" data-cmd="tracert 1.1.1.1" data-i18n="btnCopy">Copy</button>
+            </div>
+          </div>
+          <div class="cmd-item">
+            <div class="cmd-desc" data-i18n="cmd4Desc">Query domain name servers (NS)</div>
+            <div class="cmd-code-row">
+              <code>nslookup -type=ns google.com</code>
+              <button class="btn-copy-cmd" data-cmd="nslookup -type=ns google.com" data-i18n="btnCopy">Copy</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden" data-i18n="copied">Copied to clipboard</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - 네트워크 아웃바운드 및 게이트웨이 검사기"
+  },
+  "appDesc": {
+    "message": "경량 아웃바운드 IP, DNS 및 WebRTC 유출 감지기, 로컬 게이트웨이 바로가기 및 네트워크 문제 해결 툴킷."
+  },
+  "actionTitle": {
+    "message": "Zgyet 네트워크 진단"
+  },
+  "subtitle": {
+    "message": "네트워크 & 게이트웨이 검사기"
+  },
+  "refresh": {
+    "message": "새로고침"
+  },
+  "tabRoute": {
+    "message": "아웃바운드"
+  },
+  "tabLan": {
+    "message": "게이트웨이"
+  },
+  "tabTools": {
+    "message": "도구"
+  },
+  "outboundLabel": {
+    "message": "현재 공용 IP (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "탐지 중..."
+  },
+  "querying": {
+    "message": "조회 중..."
+  },
+  "btnCopy": {
+    "message": "복사"
+  },
+  "securityLabel": {
+    "message": "보안 및 유출 탐지"
+  },
+  "webrtcTitle": {
+    "message": "WebRTC IP 유출 검사"
+  },
+  "dnsTitle": {
+    "message": "DNS 서버"
+  },
+  "webrtcSafe": {
+    "message": "안전 (IP 유출 없음)"
+  },
+  "webrtcCandidate": {
+    "message": "후보 IP: $",
+    "placeholders": {
+      "ips": {
+        "content": ""
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "WebRTC 비활성화 / 보호됨"
+  },
+  "dnsOk": {
+    "message": "정상 (응답: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "로컬 게이트웨이 / 프록시 관리됨"
+  },
+  "lanHeader": {
+    "message": "LAN & 홈랩 게이트웨이"
+  },
+  "addGateway": {
+    "message": "+ 추가"
+  },
+  "gwNamePlaceholder": {
+    "message": "이름 (예: 라우터)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "주소 (예: 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "네트워크 문제 해결 명령어"
+  },
+  "cmd1Desc": {
+    "message": "공용 IP 확인 (터미널)"
+  },
+  "cmd2Desc": {
+    "message": "DNS 캐시 플러시 (Windows)"
+  },
+  "cmd3Desc": {
+    "message": "경로 추적 (Tracert)"
+  },
+  "cmd4Desc": {
+    "message": "네임서버(NS) 조회"
+  },
+  "copied": {
+    "message": "클립보드에 복사됨"
+  },
+  "ipCopied": {
+    "message": "IP 복사됨"
+  },
+  "cmdCopied": {
+    "message": "명령어 복사됨"
+  },
+  "gwAdded": {
+    "message": "게이트웨이가 추가되었습니다"
+  },
+  "gwDeleted": {
+    "message": "게이트웨이가 삭제되었습니다"
+  },
+  "enterGwAlert": {
+    "message": "이름과 주소를 입력하세요"
+  },
+  "footerTip": {
+    "message": "종속성 없음 · 순수 로컬 실행 · 초고속 로드"
+  },
+  "enterBtn": {
+    "message": "열기"
+  },
+  "gwOpenwrt": {
+    "message": "소프트웨어 라우터 주소"
+  },
+  "gwMain": {
+    "message": "메인 라우터 주소"
+  },
+  "gwProxy": {
+    "message": "서브 라우터 주소"
+  },
+  "locationLabel": {
+    "message": "국가 및 지역: "
+  },
+  "ispLabel": {
+    "message": "통신사 명칭: "
+  },
+  "candidateLabel": {
+    "message": "후보 IP:"
+  }
+}

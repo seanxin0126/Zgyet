@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - Inspecteur IP et Passerelle"
+  },
+  "appDesc": {
+    "message": "Détecteur léger de fuites IP, DNS et WebRTC avec raccourcis de passerelle LAN."
+  },
+  "actionTitle": {
+    "message": "Diagnostic Réseau Zgyet"
+  },
+  "subtitle": {
+    "message": "Inspecteur Réseau et Passerelle"
+  },
+  "refresh": {
+    "message": "Actualiser"
+  },
+  "tabRoute": {
+    "message": "Sortie"
+  },
+  "tabLan": {
+    "message": "Passerelles"
+  },
+  "tabTools": {
+    "message": "Outils"
+  },
+  "outboundLabel": {
+    "message": "IP Publique (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "Détection..."
+  },
+  "querying": {
+    "message": "Recherche..."
+  },
+  "btnCopy": {
+    "message": "Copier"
+  },
+  "securityLabel": {
+    "message": "Sécurité et Détection de Fuites"
+  },
+  "webrtcTitle": {
+    "message": "Test de Fuite WebRTC"
+  },
+  "dnsTitle": {
+    "message": "Résolution DNS"
+  },
+  "webrtcSafe": {
+    "message": "Sécurisé (Pas de fuite)"
+  },
+  "webrtcCandidate": {
+    "message": "IP Candidate: $",
+    "placeholders": {
+      "ips": {
+        "content": ""
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "WebRTC désactivé / protégé"
+  },
+  "dnsOk": {
+    "message": "Normal (Réponse: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "Passerelle / Proxy local"
+  },
+  "lanHeader": {
+    "message": "Passerelles LAN & Homelab"
+  },
+  "addGateway": {
+    "message": "+ Ajouter"
+  },
+  "gwNamePlaceholder": {
+    "message": "Nom (ex: Routeur)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "IP (ex: 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "Commandes de Diagnostic Réseau"
+  },
+  "cmd1Desc": {
+    "message": "Vérifier IP publique"
+  },
+  "cmd2Desc": {
+    "message": "Vider le cache DNS"
+  },
+  "cmd3Desc": {
+    "message": "Traçage de route"
+  },
+  "cmd4Desc": {
+    "message": "Interroger serveur de noms"
+  },
+  "copied": {
+    "message": "Copié dans le presse-papiers"
+  },
+  "ipCopied": {
+    "message": "IP Copiée"
+  },
+  "cmdCopied": {
+    "message": "Commande Copiée"
+  },
+  "gwAdded": {
+    "message": "Passerelle ajoutée"
+  },
+  "gwDeleted": {
+    "message": "Passerelle supprimée"
+  },
+  "enterGwAlert": {
+    "message": "Veuillez entrer le nom et l'adresse"
+  },
+  "footerTip": {
+    "message": "Sans dépendances · Purement local · Ultra rapide"
+  },
+  "enterBtn": {
+    "message": "Ouvrir"
+  },
+  "gwOpenwrt": {
+    "message": "Adresse Routeur Log"
+  },
+  "gwMain": {
+    "message": "Adresse Routeur Princ"
+  },
+  "gwProxy": {
+    "message": "Adresse Routeur Sec"
+  },
+  "locationLabel": {
+    "message": "Pays / Région : "
+  },
+  "ispLabel": {
+    "message": "Nom du Fournisseur : "
+  },
+  "candidateLabel": {
+    "message": "IPs candidates :"
+  }
+}

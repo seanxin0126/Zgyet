@@ -1,0 +1,15 @@
+# Private Keys and build binaries (CRITICAL: Never commit .pem private keys)
+*.pem
+*.crx
+*.zip
+
+# OS temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node / Editor
+node_modules/
+.vscode/
+.idea/
+*.log

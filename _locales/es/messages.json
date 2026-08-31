@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - Inspector de IP de Salida y Puerta de Enlace"
+  },
+  "appDesc": {
+    "message": "Detector ligero de fugas de IP, DNS y WebRTC con accesos directos a puertas de enlace LAN."
+  },
+  "actionTitle": {
+    "message": "Diagnóstico de Red Zgyet"
+  },
+  "subtitle": {
+    "message": "Inspector de Red y Gateway"
+  },
+  "refresh": {
+    "message": "Actualizar"
+  },
+  "tabRoute": {
+    "message": "Salida"
+  },
+  "tabLan": {
+    "message": "Gateways"
+  },
+  "tabTools": {
+    "message": "Herramientas"
+  },
+  "outboundLabel": {
+    "message": "IP Pública Actual (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "Detectando..."
+  },
+  "querying": {
+    "message": "Consultando..."
+  },
+  "btnCopy": {
+    "message": "Copiar"
+  },
+  "securityLabel": {
+    "message": "Seguridad y Detección de Fugas"
+  },
+  "webrtcTitle": {
+    "message": "Comprobación de Fuga WebRTC"
+  },
+  "dnsTitle": {
+    "message": "Resolución DNS"
+  },
+  "webrtcSafe": {
+    "message": "Protegido (Sin fuga)"
+  },
+  "webrtcCandidate": {
+    "message": "IP Candidata: $",
+    "placeholders": {
+      "ips": {
+        "content": ""
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "WebRTC desactivado / protegido"
+  },
+  "dnsOk": {
+    "message": "Normal (Respuesta: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "Gestionado por Gateway/Proxy"
+  },
+  "lanHeader": {
+    "message": "Gateways LAN y Homelab"
+  },
+  "addGateway": {
+    "message": "+ Añadir"
+  },
+  "gwNamePlaceholder": {
+    "message": "Nombre (ej. Router)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "IP (ej. 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "Comandos de Diagnóstico de Red"
+  },
+  "cmd1Desc": {
+    "message": "Ver IP pública (Terminal)"
+  },
+  "cmd2Desc": {
+    "message": "Vaciar caché DNS (Windows)"
+  },
+  "cmd3Desc": {
+    "message": "Rastrear ruta (Tracert)"
+  },
+  "cmd4Desc": {
+    "message": "Consultar servidor de nombres"
+  },
+  "copied": {
+    "message": "Copiado al portapapeles"
+  },
+  "ipCopied": {
+    "message": "IP Copiada"
+  },
+  "cmdCopied": {
+    "message": "Comando Copiado"
+  },
+  "gwAdded": {
+    "message": "Gateway añadido"
+  },
+  "gwDeleted": {
+    "message": "Gateway eliminado"
+  },
+  "enterGwAlert": {
+    "message": "Introduce nombre y dirección"
+  },
+  "footerTip": {
+    "message": "Sin dependencias · 100% Local · Ultra rápido"
+  },
+  "enterBtn": {
+    "message": "Abrir"
+  },
+  "gwOpenwrt": {
+    "message": "Dirección Router Soft"
+  },
+  "gwMain": {
+    "message": "Dirección Router Princ"
+  },
+  "gwProxy": {
+    "message": "Dirección Router Sec"
+  },
+  "locationLabel": {
+    "message": "País / Región: "
+  },
+  "ispLabel": {
+    "message": "Nombre de ISP: "
+  },
+  "candidateLabel": {
+    "message": "IPs candidatas:"
+  }
+}

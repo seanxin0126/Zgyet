@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - 网络出口与网关助手"
+  },
+  "appDesc": {
+    "message": "轻量级网络出口 IP、DNS 与 WebRTC 泄露检测，搭配局域网网关直达与网络排障工具箱。"
+  },
+  "actionTitle": {
+    "message": "Zgyet 网络诊断"
+  },
+  "subtitle": {
+    "message": "网络出口与网关助手"
+  },
+  "refresh": {
+    "message": "刷新"
+  },
+  "tabRoute": {
+    "message": "出口链路"
+  },
+  "tabLan": {
+    "message": "局域网关"
+  },
+  "tabTools": {
+    "message": "速查工具"
+  },
+  "outboundLabel": {
+    "message": "当前公网出口 (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "正在探测..."
+  },
+  "querying": {
+    "message": "查询中..."
+  },
+  "btnCopy": {
+    "message": "复制"
+  },
+  "securityLabel": {
+    "message": "链路安全性与泄露探测"
+  },
+  "webrtcTitle": {
+    "message": "WebRTC 真实 IP 探测"
+  },
+  "dnsTitle": {
+    "message": "DNS 解析服务器"
+  },
+  "webrtcSafe": {
+    "message": "安全 (未发现真实 IP 泄露)"
+  },
+  "webrtcCandidate": {
+    "message": "候选 IP: $IPS$",
+    "placeholders": {
+      "ips": {
+        "content": "$1"
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "浏览器 WebRTC 已禁用/受保护"
+  },
+  "dnsOk": {
+    "message": "解析正常 (响应延迟: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "由本地网关/分流规则接管"
+  },
+  "lanHeader": {
+    "message": "常用局域网网关直达"
+  },
+  "addGateway": {
+    "message": "+ 添加"
+  },
+  "gwNamePlaceholder": {
+    "message": "名称 (例: 软路由)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "地址 (例: 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "网络排障常用指令"
+  },
+  "cmd1Desc": {
+    "message": "查看出口公网 IP (终端快速测试)"
+  },
+  "cmd2Desc": {
+    "message": "刷新本地 DNS 缓存 (Windows)"
+  },
+  "cmd3Desc": {
+    "message": "路由追踪与链路节点探测"
+  },
+  "cmd4Desc": {
+    "message": "查询指定域名解析服务器"
+  },
+  "copied": {
+    "message": "已复制到剪贴板"
+  },
+  "ipCopied": {
+    "message": "IP 已复制"
+  },
+  "cmdCopied": {
+    "message": "命令已复制"
+  },
+  "gwAdded": {
+    "message": "网关添加成功"
+  },
+  "gwDeleted": {
+    "message": "已删除网关"
+  },
+  "enterGwAlert": {
+    "message": "请输入网关名称和地址"
+  },
+  "footerTip": {
+    "message": "轻量无依赖 · 纯本地运行 · 毫秒级加载"
+  },
+  "enterBtn": {
+    "message": "进入"
+  },
+  "gwOpenwrt": {
+    "message": "软路由地址"
+  },
+  "gwMain": {
+    "message": "主路由地址"
+  },
+  "gwProxy": {
+    "message": "旁路由地址"
+  },
+  "locationLabel": {
+    "message": "国家与地区："
+  },
+  "ispLabel": {
+    "message": "运营商名称："
+  },
+  "candidateLabel": {
+    "message": "候选 IP："
+  }
+}

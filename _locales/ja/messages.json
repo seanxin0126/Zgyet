@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - ネットワーク出口＆ゲートウェイ管理"
+  },
+  "appDesc": {
+    "message": "軽量なグローバルIP・DNS・WebRTCリーク検出、LANゲートウェイ短縮機能＆ネットワーク診断ツール。"
+  },
+  "actionTitle": {
+    "message": "Zgyet ネットワーク診断"
+  },
+  "subtitle": {
+    "message": "ネットワーク＆ゲートウェイ診断"
+  },
+  "refresh": {
+    "message": "更新"
+  },
+  "tabRoute": {
+    "message": "出口ルート"
+  },
+  "tabLan": {
+    "message": "LANゲートウェイ"
+  },
+  "tabTools": {
+    "message": "ツール"
+  },
+  "outboundLabel": {
+    "message": "現在のパブリックIP (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "検出中..."
+  },
+  "querying": {
+    "message": "照会中..."
+  },
+  "btnCopy": {
+    "message": "コピー"
+  },
+  "securityLabel": {
+    "message": "セキュリティ＆リーク検出"
+  },
+  "webrtcTitle": {
+    "message": "WebRTC IP リーク検証"
+  },
+  "dnsTitle": {
+    "message": "DNS サーバー状態"
+  },
+  "webrtcSafe": {
+    "message": "安全 (IPリークなし)"
+  },
+  "webrtcCandidate": {
+    "message": "候補IP: $IPS$",
+    "placeholders": {
+      "ips": {
+        "content": "$1"
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "WebRTC 無効化 / 保護中"
+  },
+  "dnsOk": {
+    "message": "正常 (応答: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "ローカルルーター / プロキシ管理"
+  },
+  "lanHeader": {
+    "message": "LAN / Homelab ゲートウェイ"
+  },
+  "addGateway": {
+    "message": "+ 追加"
+  },
+  "gwNamePlaceholder": {
+    "message": "名前 (例: ルーター)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "IP (例: 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "ネットワーク診断コマンド一覧"
+  },
+  "cmd1Desc": {
+    "message": "グローバルIPの確認 (ターミナル)"
+  },
+  "cmd2Desc": {
+    "message": "DNSキャッシュのフラッシュ (Windows)"
+  },
+  "cmd3Desc": {
+    "message": "ルート追跡 (Tracert)"
+  },
+  "cmd4Desc": {
+    "message": "ネームサーバー (NS) 照会"
+  },
+  "copied": {
+    "message": "クリップボードにコピーしました"
+  },
+  "ipCopied": {
+    "message": "IP をコピーしました"
+  },
+  "cmdCopied": {
+    "message": "コマンドをコピーしました"
+  },
+  "gwAdded": {
+    "message": "ゲートウェイを追加しました"
+  },
+  "gwDeleted": {
+    "message": "ゲートウェイを削除しました"
+  },
+  "enterGwAlert": {
+    "message": "ゲートウェイ名とアドレスを入力してください"
+  },
+  "footerTip": {
+    "message": "依存ゼロ · 完全ローカル動作 · 高速起動"
+  },
+  "enterBtn": {
+    "message": "開く"
+  },
+  "gwOpenwrt": {
+    "message": "ソフトルーターAddr"
+  },
+  "gwMain": {
+    "message": "メインルーターAddr"
+  },
+  "gwProxy": {
+    "message": "サブルーターAddr"
+  },
+  "locationLabel": {
+    "message": "国・地域: "
+  },
+  "ispLabel": {
+    "message": "プロバイダ名称: "
+  },
+  "candidateLabel": {
+    "message": "候補 IP:"
+  }
+}

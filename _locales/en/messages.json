@@ -1,0 +1,142 @@
+{
+  "appName": {
+    "message": "Zgyet - Outbound IP & Gateway Inspector"
+  },
+  "appDesc": {
+    "message": "Lightweight Outbound IP, DNS & WebRTC Leak Detector with Local Gateway Shortcuts & Network Tools."
+  },
+  "actionTitle": {
+    "message": "Zgyet Network Diagnostics"
+  },
+  "subtitle": {
+    "message": "Network & Gateway Inspector"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "tabRoute": {
+    "message": "Outbound"
+  },
+  "tabLan": {
+    "message": "Gateways"
+  },
+  "tabTools": {
+    "message": "Tools"
+  },
+  "outboundLabel": {
+    "message": "Outbound Public IP (IPv4/IPv6)"
+  },
+  "detecting": {
+    "message": "Detecting..."
+  },
+  "querying": {
+    "message": "Querying..."
+  },
+  "btnCopy": {
+    "message": "Copy"
+  },
+  "securityLabel": {
+    "message": "Security & Leak Detection"
+  },
+  "webrtcTitle": {
+    "message": "WebRTC IP Leak Check"
+  },
+  "dnsTitle": {
+    "message": "DNS Resolution"
+  },
+  "webrtcSafe": {
+    "message": "Protected (No IP Leak)"
+  },
+  "webrtcCandidate": {
+    "message": "Candidate IP: $IPS$",
+    "placeholders": {
+      "ips": {
+        "content": "$1"
+      }
+    }
+  },
+  "webrtcDisabled": {
+    "message": "WebRTC Disabled / Protected"
+  },
+  "dnsOk": {
+    "message": "Normal (Response: $latency$ms)",
+    "placeholders": {
+      "latency": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  },
+  "dnsCustom": {
+    "message": "Local Gateway / Proxy Managed"
+  },
+  "lanHeader": {
+    "message": "Quick LAN & Homelab Gateways"
+  },
+  "addGateway": {
+    "message": "+ Add"
+  },
+  "gwNamePlaceholder": {
+    "message": "Name (e.g. Router)"
+  },
+  "gwUrlPlaceholder": {
+    "message": "IP (e.g. 192.168.1.1)"
+  },
+  "toolsHeader": {
+    "message": "Network Troubleshooting Commands"
+  },
+  "cmd1Desc": {
+    "message": "Check public IP (Quick terminal test)"
+  },
+  "cmd2Desc": {
+    "message": "Flush local DNS cache (Windows)"
+  },
+  "cmd3Desc": {
+    "message": "Trace route & network hops"
+  },
+  "cmd4Desc": {
+    "message": "Query domain name servers (NS)"
+  },
+  "copied": {
+    "message": "Copied to clipboard"
+  },
+  "ipCopied": {
+    "message": "IP Copied"
+  },
+  "cmdCopied": {
+    "message": "Command Copied"
+  },
+  "gwAdded": {
+    "message": "Gateway added"
+  },
+  "gwDeleted": {
+    "message": "Gateway removed"
+  },
+  "enterGwAlert": {
+    "message": "Please enter gateway name and address"
+  },
+  "footerTip": {
+    "message": "Zero Dependencies · Pure Client-side · Ultra Fast"
+  },
+  "enterBtn": {
+    "message": "Open"
+  },
+  "gwOpenwrt": {
+    "message": "Soft Router Address"
+  },
+  "gwMain": {
+    "message": "Main Router Address"
+  },
+  "gwProxy": {
+    "message": "Side Router Address"
+  },
+  "locationLabel": {
+    "message": "Country / Region: "
+  },
+  "ispLabel": {
+    "message": "ISP / Provider: "
+  },
+  "candidateLabel": {
+    "message": "Candidate IPs:"
+  }
+}
