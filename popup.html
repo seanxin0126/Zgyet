@@ -37,14 +37,16 @@
       <section class="card ip-card">
         <div class="card-header">
           <span class="card-label" data-i18n="outboundLabel">Outbound Public IP (IPv4/IPv6)</span>
-          <span id="latency-badge" class="badge badge-neutral">-- ms</span>
         </div>
         <div class="ip-display-row">
           <div class="ip-text-wrap">
             <span id="outbound-ip" class="ip-value" data-i18n="detecting">Detecting...</span>
             <span id="ip-version-badge" class="badge badge-accent">IP</span>
           </div>
-          <button id="btn-copy-ip" class="btn-sm" data-i18n="btnCopy" title="Copy IP">Copy</button>
+          <div class="ip-actions">
+            <span id="latency-badge" class="badge badge-neutral">-- ms</span>
+            <button id="btn-copy-ip" class="btn-sm" data-i18n="btnCopy" title="Copy IP">Copy</button>
+          </div>
         </div>
         <div class="meta-row">
           <div class="meta-item">

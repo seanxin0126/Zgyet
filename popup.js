@@ -78,7 +78,10 @@ async function runDiagnostics() {
   const detectingText = msg("detecting", "Detecting...");
   const queryingText = msg("querying", "Querying...");
 
-  document.getElementById("outbound-ip").textContent = detectingText;
+  const ipResetEl = document.getElementById("outbound-ip");
+  ipResetEl.textContent = detectingText;
+  ipResetEl.title = "";
+  ipResetEl.classList.remove("ip-v6");
   document.getElementById("latency-badge").textContent = "-- ms";
   document.getElementById("geo-location").textContent = queryingText;
   document.getElementById("isp-name").textContent = "--";
@@ -187,6 +190,12 @@ async function fetchOutboundIP(startTime) {
     };
 
     ipEl.textContent = data.ip;
+    ipEl.title = data.ip;
+    if (data.ip.includes(":")) {
+      ipEl.classList.add("ip-v6");
+    } else {
+      ipEl.classList.remove("ip-v6");
+    }
     latencyEl.textContent = `${latency} ms`;
     latencyEl.className = getLatencyBadgeClass(latency);
 
