@@ -77,6 +77,25 @@ zgyet/
 4. 点击 **“加载已解压的扩展程序”**，选择本插件所在的文件夹。
 5. 在浏览器工具栏固定 **Zgyet** 图标即可随时使用！
 
+### 📂 项目目录结构
+```
+zgyet/
+├── _locales/              # 8 国语言国际化资源包 (en, zh_CN, ja, ko...)
+│   ├── en/messages.json
+│   ├── zh_CN/messages.json
+│   └── ...
+├── icons/                # 高分辨率插件图标 (16x16, 48x48, 128x128)
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+├── manifest.json         # Manifest V3 扩展核心配置文件
+├── popup.html            # 纯净语义化弹窗 UI
+├── popup.js              # 纯客户端网络探测与存储逻辑
+├── styles.css            # 紧凑暗黑主题样式 (< 10KB)
+├── .gitignore
+└── README.md
+```
+
 ---
 
 ## 📄 License
