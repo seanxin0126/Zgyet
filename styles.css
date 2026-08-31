@@ -62,10 +62,8 @@ body {
   height: 32px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: var(--bg-secondary);
   box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
-  object-fit: contain;
-  image-rendering: pixelated;
+  object-fit: cover;
 }
 
 .title {
