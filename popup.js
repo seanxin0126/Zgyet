@@ -647,22 +647,4 @@ function initRefresh() {
   });
 }
 
-// Helper: Country Code to Emoji Flag (e.g. US -> 🇺🇸, CN -> 🇨🇳)
-function getCountryFlagEmoji(countryCode) {
-  if (!countryCode || countryCode.length !== 2) return "🌐";
-  const codePoints = countryCode
-    .toUpperCase()
-    .split("")
-    .map(char => 127397 + char.charCodeAt(0));
-  return String.fromCodePoint(...codePoints);
-}
 
-function escapeHtml(str) {
-  return str.replace(/[&<>'"]/g, tag => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    "'": "&#39;",
-    '"': "&quot;"
-  }[tag] || tag));
-}
