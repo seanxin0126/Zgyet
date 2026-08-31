@@ -467,6 +467,12 @@ function initGatewayManager() {
       url = "http://" + url;
     }
 
+    // Security: validate URL protocol whitelist to prevent javascript:/data: XSS
+    if (!isAllowedUrl(url)) {
+      showToast(msg("enterGwAlert", "Please enter gateway name and address"));
+      return;
+    }
+
     const newGw = {
       id: "gw-" + Date.now(),
       name,
@@ -566,6 +572,13 @@ function deleteGateway(id) {
   }
 }
 
+// Security: URL protocol whitelist — only http:// and https:// are allowed in href
+function isAllowedUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  const lower = url.toLowerCase().trim();
+  return lower.startsWith("http://") || lower.startsWith("https://");
+}
+
 function renderGateways(list) {
   const container = document.getElementById("gateway-list");
   if (!container) return;
@@ -579,14 +592,17 @@ function renderGateways(list) {
 
     const cleanDisplayUrl = gw.url.replace(/^https?:\/\//, "");
 
+    // Security: sanitize href — block javascript:/data:/blob: protocol injection
+    const safeHref = isAllowedUrl(gw.url) ? escapeHtml(gw.url) : "#";
+
     item.innerHTML = `
       <div class="gw-meta">
         <span class="gw-name">${escapeHtml(gw.name)}</span>
         <span class="gw-ip">${escapeHtml(cleanDisplayUrl)}</span>
       </div>
       <div class="gw-actions">
-        <a href="${escapeHtml(gw.url)}" target="_blank" class="btn-link">${escapeHtml(enterText)}</a>
-        <button class="btn-del-gw" data-id="${gw.id}" title="Delete">&times;</button>
+        <a href="${safeHref}" target="_blank" rel="noopener noreferrer" class="btn-link">${escapeHtml(enterText)}</a>
+        <button class="btn-del-gw" data-id="${escapeHtml(gw.id)}" title="Delete">&times;</button>
       </div>
     `;
 
