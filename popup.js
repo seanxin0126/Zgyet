@@ -267,25 +267,82 @@ function detectWebRTCLeak() {
   });
 }
 
-// 5. DNS / Fast Protocol Detection
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str).replace(/[&<>"']/g, m => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  }[m]));
+}
+
+// 5. DNS / Fast Protocol Detection & Resolver IP
 async function detectDNSInfo() {
   const dnsEl = document.getElementById("dns-server");
   const dnsStatus = document.getElementById("dns-status");
 
-  try {
-    const t0 = performance.now();
-    const res = await fetch("https://1.1.1.1/cdn-cgi/trace", { cache: "no-store" });
-    const dnsLatency = Math.round(performance.now() - t0);
+  let dnsLatency = null;
+  let dnsIp = null;
 
-    if (res.ok) {
-      dnsEl.textContent = msg("dnsOk", `Normal (Response: ${dnsLatency}ms)`, [dnsLatency.toString()]);
-      dnsStatus.className = "status-indicator status-ok";
-    } else {
-      dnsEl.textContent = msg("dnsCustom", "Local Gateway / Proxy Managed");
-      dnsStatus.className = "status-indicator status-ok";
+  // 1. Measure Latency
+  const latencyPromise = (async () => {
+    try {
+      const t0 = performance.now();
+      const res = await fetch("https://1.1.1.1/cdn-cgi/trace", { cache: "no-store", signal: AbortSignal.timeout(3000) });
+      if (res.ok) {
+        dnsLatency = Math.round(performance.now() - t0);
+      }
+    } catch (e) {
+      try {
+        const t0 = performance.now();
+        await fetch("https://cloudflare-dns.com/dns-query?name=cloudflare.com&type=A", {
+          headers: { accept: "application/dns-json" },
+          signal: AbortSignal.timeout(3000)
+        });
+        dnsLatency = Math.round(performance.now() - t0);
+      } catch (e2) {}
     }
-  } catch (e) {
-    dnsEl.textContent = msg("dnsCustom", "Local Gateway / Proxy Managed");
+  })();
+
+  // 2. Fetch Recursive DNS Resolver IP
+  const resolverIpPromise = (async () => {
+    try {
+      const res = await fetch("https://edns.ip-api.com/json", { cache: "no-store", signal: AbortSignal.timeout(3000) });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.dns && data.dns.ip) {
+          dnsIp = data.dns.ip;
+        }
+      }
+    } catch (e) {}
+  })();
+
+  await Promise.allSettled([latencyPromise, resolverIpPromise]);
+
+  const latencyStr = dnsLatency !== null
+    ? msg("dnsOk", `Normal (Response: ${dnsLatency}ms)`, [dnsLatency.toString()])
+    : msg("dnsOk", "Normal");
+
+  if (dnsIp) {
+    dnsEl.innerHTML = `
+      <div class="webrtc-ip-row" style="margin-top: 3px;">
+        <span class="ip-type-badge badge-dns">DNS</span>
+        <span class="webrtc-ip-text">${escapeHtml(dnsIp)}</span>
+      </div>
+      <div class="dns-sub-status">${latencyStr}</div>
+    `;
+    dnsStatus.className = "status-indicator status-ok";
+  } else if (dnsLatency !== null) {
+    dnsEl.innerHTML = `
+      <div class="dns-sub-status">${latencyStr}</div>
+    `;
+    dnsStatus.className = "status-indicator status-ok";
+  } else {
+    dnsEl.innerHTML = `
+      <div class="dns-sub-status">${msg("dnsCustom", "Local Gateway / Proxy Managed")}</div>
+    `;
     dnsStatus.className = "status-indicator status-ok";
   }
 }
