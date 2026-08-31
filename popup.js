@@ -101,40 +101,73 @@ async function runDiagnostics() {
   }
 }
 
-// 3. Outbound IP & Geo Location Fetcher (High Speed + Fallback)
+// 3. Outbound IP & Geo Location Fetcher (High Speed Multi-Fallback + Silent Handling)
 async function fetchOutboundIP(startTime) {
   let data = null;
   let latency = 0;
 
+  // 1. Primary endpoint: ipwho.is
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 4000);
-
-    const res = await fetch("https://ipwho.is/", { signal: controller.signal });
-    clearTimeout(timeoutId);
-    latency = Math.round(performance.now() - startTime);
-
+    const res = await fetch("https://ipwho.is/", {
+      cache: "no-store",
+      signal: AbortSignal.timeout(3500)
+    });
     if (res.ok) {
-      data = await res.json();
-    }
-  } catch (err) {
-    // Fallback API
-    try {
-      const fbRes = await fetch("https://api.ipify.org?format=json");
-      if (fbRes.ok) {
-        const fbData = await fbRes.json();
-        data = {
-          ip: fbData.ip,
-          country: "Internet Node",
-          city: "",
-          country_code: "",
-          connection: { isp: "ISP", asn: "" }
-        };
+      const json = await res.json();
+      if (json && json.success !== false && json.ip) {
+        data = json;
         latency = Math.round(performance.now() - startTime);
       }
-    } catch (fbErr) {
-      console.warn("Fallback IP detection failed", fbErr);
     }
+  } catch (err) {}
+
+  // 2. Secondary fallback: api.ip.sb/geoip
+  if (!data || !data.ip) {
+    try {
+      const res = await fetch("https://api.ip.sb/geoip", {
+        cache: "no-store",
+        signal: AbortSignal.timeout(3500)
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.ip) {
+          data = {
+            ip: json.ip,
+            country: json.country || "",
+            city: json.city || "",
+            country_code: json.country_code || "",
+            connection: {
+              isp: json.isp || json.organization || "Outbound ISP",
+              asn: json.asn ? `AS${json.asn}` : ""
+            }
+          };
+          latency = Math.round(performance.now() - startTime);
+        }
+      }
+    } catch (err) {}
+  }
+
+  // 3. Third fallback: api.ipify.org
+  if (!data || !data.ip) {
+    try {
+      const res = await fetch("https://api.ipify.org?format=json", {
+        cache: "no-store",
+        signal: AbortSignal.timeout(3000)
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.ip) {
+          data = {
+            ip: json.ip,
+            country: "Internet Route",
+            city: "",
+            country_code: "",
+            connection: { isp: "ISP Network", asn: "" }
+          };
+          latency = Math.round(performance.now() - startTime);
+        }
+      }
+    } catch (err) {}
   }
 
   // Render to UI
@@ -175,6 +208,8 @@ async function fetchOutboundIP(startTime) {
     ipEl.textContent = msg("detecting", "Timeout / Offline");
     geoEl.textContent = "Location unavailable";
     ispEl.textContent = "--";
+    latencyEl.textContent = "-- ms";
+    latencyEl.className = "badge badge-neutral";
   }
 }
 
