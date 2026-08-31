@@ -399,22 +399,26 @@ async function detectDNSInfo() {
   // Determine Leak & Pollution status
   let secText = "";
   let secClass = "";
+  let secIcon = "";
 
   const isOverseasOutbound = detectedOutboundInfo.countryCode && detectedOutboundInfo.countryCode !== "CN";
   const isChinaDns = dnsGeo && (dnsGeo.toLowerCase().includes("china") || dnsGeo.toLowerCase().includes("cn -"));
 
   if (isOverseasOutbound && isChinaDns) {
     // DNS Leak detected (Outbound is overseas proxy, but DNS queries leak to domestic China ISP)
-    secText = msg("dnsLeakWarn", "⚠️ DNS Leak: Requests exposed to local ISP");
+    secText = msg("dnsLeakWarn", "DNS Leak: Requests exposed to local ISP");
     secClass = "dns-sec-warn";
+    secIcon = `<svg class="sec-icon" viewBox="0 0 24 24" width="12" height="12"><path fill="currentColor" d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>`;
   } else if (dnsIp || dnsLatency !== null) {
     // Normal / Clean
-    secText = msg("dnsLeakSafe", "🛡️ DNS Protected · Clean & No Leak");
+    secText = msg("dnsLeakSafe", "DNS Protected · Clean & No Leak");
     secClass = "dns-sec-safe";
+    secIcon = `<svg class="sec-icon" viewBox="0 0 24 24" width="12" height="12"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>`;
   } else {
     // Intercepted / Suspected Hijacking
-    secText = msg("dnsPollutedWarn", "🚨 Suspected DNS Hijacking / Intercepted");
+    secText = msg("dnsPollutedWarn", "Suspected DNS Hijacking / Intercepted");
     secClass = "dns-sec-danger";
+    secIcon = `<svg class="sec-icon" viewBox="0 0 24 24" width="12" height="12"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>`;
   }
 
   if (dnsIp) {
@@ -424,19 +428,19 @@ async function detectDNSInfo() {
         <span class="webrtc-ip-text">${escapeHtml(dnsIp)}</span>
       </div>
       <div class="dns-sub-status">${latencyStr}</div>
-      <div class="dns-sec-status ${secClass}">${escapeHtml(secText)}</div>
+      <div class="dns-sec-status ${secClass}">${secIcon}<span>${escapeHtml(secText)}</span></div>
     `;
     dnsStatus.className = (secClass === "dns-sec-warn") ? "status-indicator status-warning" : statusIndicatorClass;
   } else if (dnsLatency !== null) {
     dnsEl.innerHTML = `
       <div class="dns-sub-status">${latencyStr}</div>
-      <div class="dns-sec-status ${secClass}">${escapeHtml(secText)}</div>
+      <div class="dns-sec-status ${secClass}">${secIcon}<span>${escapeHtml(secText)}</span></div>
     `;
     dnsStatus.className = statusIndicatorClass;
   } else {
     dnsEl.innerHTML = `
       <div class="dns-sub-status">${msg("dnsCustom", "Local Gateway / Proxy Managed")}</div>
-      <div class="dns-sec-status ${secClass}">${escapeHtml(secText)}</div>
+      <div class="dns-sec-status ${secClass}">${secIcon}<span>${escapeHtml(secText)}</span></div>
     `;
     dnsStatus.className = "status-indicator status-warning";
   }

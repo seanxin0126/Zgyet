@@ -140,12 +140,12 @@
     "message": "IPs candidatas:"
   },
   "dnsLeakSafe": {
-    "message": "🛡️ DNS protegido · Sin fugas / Limpio"
+    "message": "DNS protegido · Sin fugas / Limpio"
   },
   "dnsLeakWarn": {
-    "message": "⚠️ Fuga de DNS detectada (Resuelve vía ISP local)"
+    "message": "Fuga de DNS detectada (Resuelve vía ISP local)"
   },
   "dnsPollutedWarn": {
-    "message": "🚨 Sospecha de secuestro / contaminación DNS"
+    "message": "Sospecha de secuestro / contaminación DNS"
   }
 }

@@ -439,6 +439,12 @@ body {
   font-weight: 600;
 }
 
+.sec-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
 .webrtc-ip-text {
   color: #f1f5f9;
   word-break: break-all;

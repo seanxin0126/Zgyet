@@ -140,12 +140,12 @@
     "message": "후보 IP:"
   },
   "dnsLeakSafe": {
-    "message": "🛡️ DNS 유출 없음 · 오염 없음 (안전)"
+    "message": "DNS 유출 없음 · 오염 없음 (안전)"
   },
   "dnsLeakWarn": {
-    "message": "⚠️ DNS 유출 감지됨 (로컬 ISP 경유)"
+    "message": "DNS 유출 감지됨 (로컬 ISP 경유)"
   },
   "dnsPollutedWarn": {
-    "message": "🚨 DNS 오염 / 하이재킹 의심"
+    "message": "DNS 오염 / 하이재킹 의심"
   }
 }

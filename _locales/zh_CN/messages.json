@@ -140,12 +140,12 @@
     "message": "候选 IP："
   },
   "dnsLeakSafe": {
-    "message": "🛡️ DNS 未泄露 · 纯净无污染"
+    "message": "DNS 未泄露 · 纯净无污染"
   },
   "dnsLeakWarn": {
-    "message": "⚠️ 存在 DNS 泄露 (解析暴露至本地运营商)"
+    "message": "存在 DNS 泄露 (解析暴露至本地运营商)"
   },
   "dnsPollutedWarn": {
-    "message": "🚨 疑似 DNS 污染 / 劫持拦截"
+    "message": "疑似 DNS 污染 / 劫持拦截"
   }
 }

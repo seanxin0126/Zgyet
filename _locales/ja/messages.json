@@ -140,12 +140,12 @@
     "message": "候補 IP:"
   },
   "dnsLeakSafe": {
-    "message": "🛡️ DNS 漏洩なし · 汚染なし (安全)"
+    "message": "DNS 漏洩なし · 汚染なし (安全)"
   },
   "dnsLeakWarn": {
-    "message": "⚠️ DNS 漏洩を検出 (ローカルISP経由)"
+    "message": "DNS 漏洩を検出 (ローカルISP経由)"
   },
   "dnsPollutedWarn": {
-    "message": "🚨 DNS 汚染 / ハイジャックの疑い"
+    "message": "DNS 汚染 / ハイジャックの疑い"
   }
 }

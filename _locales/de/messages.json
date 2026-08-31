@@ -140,12 +140,12 @@
     "message": "Kandidaten-IPs:"
   },
   "dnsLeakSafe": {
-    "message": "🛡️ DNS geschützt · Kein Leak / Sauber"
+    "message": "DNS geschützt · Kein Leak / Sauber"
   },
   "dnsLeakWarn": {
-    "message": "⚠️ DNS-Leak erkannt (Auflösung über lokalen ISP)"
+    "message": "DNS-Leak erkannt (Auflösung über lokalen ISP)"
   },
   "dnsPollutedWarn": {
-    "message": "🚨 Verdacht auf DNS-Hijacking / Manipulation"
+    "message": "Verdacht auf DNS-Hijacking / Manipulation"
   }
 }
