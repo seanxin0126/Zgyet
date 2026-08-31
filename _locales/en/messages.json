@@ -24,7 +24,7 @@
     "message": "Tools"
   },
   "outboundLabel": {
-    "message": "Outbound Public IP (IPv4/IPv6)"
+    "message": "Current Outbound (IPv4/IPv6)"
   },
   "detecting": {
     "message": "Detecting..."
@@ -42,7 +42,7 @@
     "message": "WebRTC IP Leak Check"
   },
   "dnsTitle": {
-    "message": "DNS Resolution"
+    "message": "DNS Resolver"
   },
   "webrtcSafe": {
     "message": "Protected (No IP Leak)"
@@ -71,7 +71,7 @@
     "message": "Local Gateway / Proxy Managed"
   },
   "lanHeader": {
-    "message": "Quick LAN & Homelab Gateways"
+    "message": "Homelab & LAN Gateways"
   },
   "addGateway": {
     "message": "+ Add"
@@ -83,7 +83,7 @@
     "message": "IP (e.g. 192.168.1.1)"
   },
   "toolsHeader": {
-    "message": "Network Troubleshooting Commands"
+    "message": "Network Troubleshooting Tools"
   },
   "cmd1Desc": {
     "message": "Check public IP (Quick terminal test)"
@@ -131,10 +131,10 @@
     "message": "Side Router Address"
   },
   "locationLabel": {
-    "message": "Country / Region: "
+    "message": "Location:"
   },
   "ispLabel": {
-    "message": "ISP / Provider: "
+    "message": "ISP / ASN:"
   },
   "candidateLabel": {
     "message": "Candidate IPs:"
