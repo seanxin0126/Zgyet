@@ -391,7 +391,7 @@ async function detectDNSInfo() {
   const colorClass = dnsLatency !== null ? getLatencyColorClass(dnsLatency) : "latency-good";
   const coloredLatency = dnsLatency !== null ? `<span class="${colorClass}">${dnsLatency}</span>` : "";
   const latencyStr = dnsLatency !== null
-    ? msg("dnsOk", `Normal (Response: ${dnsLatency}ms)`, [coloredLatency])
+    ? msg("dnsOk", `Normal (Response: ${dnsLatency} ms)`, [coloredLatency])
     : msg("dnsOk", "Normal");
 
   let statusIndicatorClass = "status-indicator status-ok";
