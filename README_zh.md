@@ -1,7 +1,8 @@
 # Zgyet - 网络出口与网关助手
 > 🌐 专为 Chrome 与 Edge 打造的高性能、轻量级 Manifest V3 浏览器扩展。
 
-[![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue.svg)](https://developer.chrome.com/docs/extensions/mv3/)
+[![Version: v1.0.3](https://img.shields.io/badge/version-v1.0.3-blue.svg)](https://github.com/seanxin0126/Zgyet)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg)](https://developer.chrome.com/docs/extensions/mv3/)
 [![Pure Vanilla](https://img.shields.io/badge/Dependencies-0%20Zero-green.svg)](https://github.com/seanxin0126/Zgyet)
 [![Multi-language](https://img.shields.io/badge/i18n-8%20Languages-cyan.svg)](_locales)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -12,13 +13,16 @@
 
 ## ✨ 功能特性
 
-- ⚡ **公网出口 IP 极速探测**：毫秒级展示当前公网 IPv4 / IPv6、运营商（ISP）、地理位置（国家与地区）及 ASN。
+- ⚡ **公网出口 IP 极速探测**：毫秒级展示当前公网 IPv4 / IPv6、运营商（ISP）、地理位置（国家与地区）及 ASN，集成多通道秒级容灾。
 - 🛡️ **WebRTC 防泄漏检测**：实时探测浏览器 WebRTC 候选 IP，严格按 IPv4 在前、IPv6 在后智能排序并首位完美对齐。
-- 🔍 **DNS 解析与延迟监测**：实时测试 DNS 响应延迟，判断分流与网络接管状态。
+- 🔍 **DNS 服务器与安全防泄漏监测**：
+  - 自动探测当前使用的递归 DNS 解析服务器真实 IP。
+  - 毫秒级三段式动态响应延迟色彩提示（`<450ms` 极速绿，`450~1000ms` 中等黄，`>1000ms` 超时红）。
+  - 实时检测 **DNS 泄露与污染/劫持状态**（`🛡️ DNS 未泄露 · 纯净无污染` / `⚠️ 存在 DNS 泄露`）。
 - 🏠 **常用局域网网关直达**：内置软路由地址、主路由地址、旁路由地址一键直达，支持自定义添加与回车快捷保存。
 - 🛠️ **网络排障指令速查**：内置常用网络命令（`ipconfig`, `tracert`, `nslookup`, `curl` 等），支持一键复制到剪贴板。
 - 🌐 **全自动多语言国际化**：内置 8 国语言包（简体中文、繁体中文、英语、日语、韩语、德语、西班牙语、法语），跟随系统语言自动切换。
-- 🪶 **极致轻量无依赖**：纯原生 JS 与 CSS 编写，零第三方依赖库，总体积不足 35 KB。
+- 🪶 **极致轻量无依赖**：纯原生 JS 与 CSS 编写，零第三方依赖库，总体积不足 35 KB，0 远程追踪上报。
 
 ### 📸 界面预览
 <div align="center">
@@ -26,6 +30,27 @@
   <img src="assets/screenshot-zh-gateways.png" alt="常用局域网网关" width="31%" />
   <img src="assets/screenshot-zh-tools.png" alt="网络排障速查" width="31%" />
 </div>
+
+---
+
+## 📝 更新日志 (Changelog)
+
+#### v1.0.3 (最新版本)
+- ✨ **DNS 安全检测行**：新增实时 DNS 泄露与劫持/污染检测状态行，支持 8 种语言本地化提示。
+- ⚡ **DNS 服务器 IP 与色彩阈值**：实装递归 DNS 解析服务器 IP 展示及响应延迟三段式变色提示（`<450ms` 绿色、`450-1000ms` 黄色、`>1000ms` 红色）。
+- 🛡️ **后台 0 报警优化**：接入三级高速容灾出口探测引擎，采用静默异常处理，确保扩展管理页 0 错误、0 警告。
+- 🎨 **视觉与排版优化**：重构英文界面排版与标签对齐，全量更新高清脱敏 UI 预览截图。
+
+#### v1.0.2
+- ⚡ 优化 DNS 响应延迟色彩逻辑与状态灯切换。
+- 🛠️ 修复扩展管理后台错误日志。
+
+#### v1.0.1
+- 🌐 完善中英文双语预览图与国际化资源包。
+- 🏷️ 统一网关预设标签为 5 字符标准格式。
+
+#### v1.0.0
+- 🎉 首次正式发布，支持 Manifest V3 架构。
 
 ---
 
