@@ -147,7 +147,7 @@ async function fetchOutboundIP(startTime) {
   if (data && data.ip) {
     ipEl.textContent = data.ip;
     latencyEl.textContent = `${latency} ms`;
-    latencyEl.className = latency < 150 ? "badge badge-accent" : "badge badge-neutral";
+    latencyEl.className = getLatencyBadgeClass(latency);
 
     // IPv4 vs IPv6
     ipVerBadge.textContent = data.ip.includes(":") ? "IPv6" : "IPv4";
@@ -278,6 +278,18 @@ function escapeHtml(str) {
   }[m]));
 }
 
+function getLatencyColorClass(ms) {
+  if (ms < 450) return "latency-good";       // 绿字 (<450ms)
+  if (ms <= 1000) return "latency-medium";    // 黄字 (450ms - 1000ms)
+  return "latency-slow";                     // 红字 (>1000ms)
+}
+
+function getLatencyBadgeClass(ms) {
+  if (ms < 450) return "badge badge-latency-good";
+  if (ms <= 1000) return "badge badge-latency-medium";
+  return "badge badge-latency-slow";
+}
+
 // 5. DNS / Fast Protocol Detection & Resolver IP
 async function detectDNSInfo() {
   const dnsEl = document.getElementById("dns-server");
@@ -321,9 +333,22 @@ async function detectDNSInfo() {
 
   await Promise.allSettled([latencyPromise, resolverIpPromise]);
 
+  const colorClass = dnsLatency !== null ? getLatencyColorClass(dnsLatency) : "latency-good";
+  const coloredLatency = dnsLatency !== null ? `<span class="${colorClass}">${dnsLatency}</span>` : "";
   const latencyStr = dnsLatency !== null
-    ? msg("dnsOk", `Normal (Response: ${dnsLatency}ms)`, [dnsLatency.toString()])
+    ? msg("dnsOk", `Normal (Response: ${dnsLatency}ms)`, [coloredLatency])
     : msg("dnsOk", "Normal");
+
+  let statusIndicatorClass = "status-indicator status-ok";
+  if (dnsLatency !== null) {
+    if (dnsLatency < 450) {
+      statusIndicatorClass = "status-indicator status-ok";
+    } else if (dnsLatency <= 1000) {
+      statusIndicatorClass = "status-indicator status-warning";
+    } else {
+      statusIndicatorClass = "status-indicator status-danger";
+    }
+  }
 
   if (dnsIp) {
     dnsEl.innerHTML = `
@@ -333,12 +358,12 @@ async function detectDNSInfo() {
       </div>
       <div class="dns-sub-status">${latencyStr}</div>
     `;
-    dnsStatus.className = "status-indicator status-ok";
+    dnsStatus.className = statusIndicatorClass;
   } else if (dnsLatency !== null) {
     dnsEl.innerHTML = `
       <div class="dns-sub-status">${latencyStr}</div>
     `;
-    dnsStatus.className = "status-indicator status-ok";
+    dnsStatus.className = statusIndicatorClass;
   } else {
     dnsEl.innerHTML = `
       <div class="dns-sub-status">${msg("dnsCustom", "Local Gateway / Proxy Managed")}</div>

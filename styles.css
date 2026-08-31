@@ -237,6 +237,24 @@ body {
   border: 1px solid var(--accent);
 }
 
+.badge-latency-good {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.badge-latency-medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-latency-slow {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
 .btn-sm {
   background: var(--bg-tertiary);
   color: var(--text-main);
@@ -379,6 +397,21 @@ body {
   font-size: 11px;
   color: var(--text-muted);
   margin-top: 3px;
+}
+
+.latency-good {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.latency-medium {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.latency-slow {
+  color: #ef4444;
+  font-weight: 600;
 }
 
 .webrtc-ip-text {
