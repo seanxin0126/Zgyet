@@ -21,9 +21,9 @@
 - 🌐 **Full Automatic Localization (i18n)**: Out-of-the-box support for English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Español, and Français.
 ### 📸 Screenshots
 <div align="center">
-  <img src="assets/screenshot-outbound.png" alt="Outbound & Leak Detection" width="31%" />
-  <img src="assets/screenshot-gateways.png" alt="LAN Gateways" width="31%" />
-  <img src="assets/screenshot-tools.png" alt="Network Tools" width="31%" />
+  <img src="assets/screenshot-en-outbound.png" alt="Outbound & Leak Detection" width="31%" />
+  <img src="assets/screenshot-en-gateways.png" alt="LAN Gateways" width="31%" />
+  <img src="assets/screenshot-en-tools.png" alt="Network Tools" width="31%" />
 </div>
 
 ### 🚀 Installation & Local Debugging
@@ -72,9 +72,9 @@ zgyet/
 
 ### 📸 界面预览
 <div align="center">
-  <img src="assets/screenshot-outbound.png" alt="出口链路与防泄漏" width="31%" />
-  <img src="assets/screenshot-gateways.png" alt="常用局域网网关" width="31%" />
-  <img src="assets/screenshot-tools.png" alt="网络排障速查" width="31%" />
+  <img src="assets/screenshot-zh-outbound.png" alt="出口链路与防泄漏" width="31%" />
+  <img src="assets/screenshot-zh-gateways.png" alt="常用局域网网关" width="31%" />
+  <img src="assets/screenshot-zh-tools.png" alt="网络排障速查" width="31%" />
 </div>
 
 ### 🚀 安装与本地加载步骤

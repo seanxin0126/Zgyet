@@ -22,9 +22,9 @@
 
 ### 📸 界面预览
 <div align="center">
-  <img src="assets/screenshot-outbound.png" alt="出口链路与防泄漏" width="31%" />
-  <img src="assets/screenshot-gateways.png" alt="常用局域网网关" width="31%" />
-  <img src="assets/screenshot-tools.png" alt="网络排障速查" width="31%" />
+  <img src="assets/screenshot-zh-outbound.png" alt="出口链路与防泄漏" width="31%" />
+  <img src="assets/screenshot-zh-gateways.png" alt="常用局域网网关" width="31%" />
+  <img src="assets/screenshot-zh-tools.png" alt="网络排障速查" width="31%" />
 </div>
 
 ---
