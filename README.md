@@ -6,11 +6,11 @@
 [![Multi-language](https://img.shields.io/badge/i18n-8%20Languages-cyan.svg)](_locales)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[English](#-english) | [简体中文](#-简体中文)
+[English](#english) | [简体中文](#简体中文)
 
 ---
 
-## 🇺🇸 English
+## English
 
 ### ✨ Features
 - ⚡ **Instant Outbound IP Detection**: Ultra-fast fetching of Public IPv4 / IPv6, Location, ISP & ASN.
@@ -54,7 +54,7 @@ zgyet/
 
 ---
 
-## 🇨🇳 简体中文
+## 简体中文
 
 ### ✨ 功能特性
 - ⚡ **公网出口 IP 极速探测**：毫秒级展示当前公网 IPv4 / IPv6、运营商（ISP）、地理位置（国家与地区）及 ASN。
