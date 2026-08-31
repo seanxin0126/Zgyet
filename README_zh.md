@@ -1,0 +1,64 @@
+# Zgyet - 网络出口与网关助手
+> 🌐 专为 Chrome 与 Edge 打造的高性能、轻量级 Manifest V3 浏览器扩展。
+
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue.svg)](https://developer.chrome.com/docs/extensions/mv3/)
+[![Pure Vanilla](https://img.shields.io/badge/Dependencies-0%20Zero-green.svg)](https://github.com/seanxin0126/Zgyet)
+[![Multi-language](https://img.shields.io/badge/i18n-8%20Languages-cyan.svg)](_locales)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+[English](README.md) | [简体中文](README_zh.md)
+
+---
+
+## ✨ 功能特性
+
+- ⚡ **公网出口 IP 极速探测**：毫秒级展示当前公网 IPv4 / IPv6、运营商（ISP）、地理位置（国家与地区）及 ASN。
+- 🛡️ **WebRTC 防泄漏检测**：实时探测浏览器 WebRTC 候选 IP，严格按 IPv4 在前、IPv6 在后智能排序并首位完美对齐。
+- 🔍 **DNS 解析与延迟监测**：实时测试 DNS 响应延迟，判断分流与网络接管状态。
+- 🏠 **常用局域网网关直达**：内置软路由地址、主路由地址、旁路由地址一键直达，支持自定义添加与回车快捷保存。
+- 🛠️ **网络排障指令速查**：内置常用网络命令（`ipconfig`, `tracert`, `nslookup`, `curl` 等），支持一键复制到剪贴板。
+- 🌐 **全自动多语言国际化**：内置 8 国语言包（简体中文、繁体中文、英语、日语、韩语、德语、西班牙语、法语），跟随系统语言自动切换。
+- 🪶 **极致轻量无依赖**：纯原生 JS 与 CSS 编写，零第三方依赖库，总体积不足 35 KB。
+
+---
+
+## 🚀 安装与本地加载步骤
+
+1. 克隆或下载本项目源码：
+   ```bash
+   git clone https://github.com/seanxin0126/Zgyet.git
+   ```
+2. 打开浏览器的扩展程序管理页：
+   - **Google Chrome**：在地址栏输入 `chrome://extensions`
+   - **Microsoft Edge**：在地址栏输入 `edge://extensions`
+3. 开启页面右上角或左侧的 **“开发者模式”** 开关。
+4. 点击 **“加载已解压的扩展程序”**，选择本插件所在的文件夹。
+5. 在浏览器工具栏固定 **Zgyet** 图标即可随时使用！
+
+---
+
+## 📂 项目目录结构
+
+```
+zgyet/
+├── _locales/              # 8 国语言国际化资源包
+│   ├── en/messages.json
+│   ├── zh_CN/messages.json
+│   └── ...
+├── icons/                # 高分辨率插件图标 (16x16, 48x48, 128x128)
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+├── manifest.json         # Manifest V3 扩展配置文件
+├── popup.html            # 纯净语义化弹窗结构
+├── popup.js              # 纯客户端网络探测与存储逻辑
+├── styles.css            # 紧凑暗黑主题样式 (< 10KB)
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 📄 开源协议
+
+MIT License © 2026 Zgyet
