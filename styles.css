@@ -70,6 +70,20 @@ body {
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.version-tag {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+  color: var(--accent-text);
+  border: 1px solid var(--border);
+  letter-spacing: 0;
 }
 
 .subtitle {
