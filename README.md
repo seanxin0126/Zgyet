@@ -22,7 +22,7 @@
 - 🔍 **DNS Resolver & Real-Time Leak Check**:
   - Displays the active recursive DNS exit node IP address.
   - Color-coded response latency (`<450ms` green, `450-1000ms` yellow, `>1000ms` red).
-  - Real-time **DNS Leak & Pollution/Poisoning Detection** (`🛡️ DNS Protected · Clean & No Leak`).
+  - Real-time **DNS Leak & Pollution/Poisoning Detection** (`DNS Protected · Clean & No Leak`).
 - 🏠 **Homelab & LAN Gateways**: Built-in quick shortcuts for Soft Routers, Main Routers, and Sub-gateways, with custom one-click addition.
 - 🛠️ **Network Tools & Cheatsheet**: Copyable essential network troubleshooting commands (`ipconfig`, `tracert`, `nslookup`, `curl`).
 - 🌐 **Full Automatic Localization (i18n)**: Out-of-the-box support for English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Español, and Français.
@@ -68,25 +68,6 @@
 4. Click **"Load unpacked"** and select the `zgyet` folder.
 5. Pin **Zgyet** to your toolbar and enjoy!
 
-### 📂 Project Structure
-```
-zgyet/
-├── _locales/              # Multi-language localization packages (8 locales)
-│   ├── en/messages.json
-│   ├── zh_CN/messages.json
-│   └── ...
-├── icons/                # High-res extension icons (16x16, 48x48, 128x128)
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-├── manifest.json         # Manifest V3 extension configuration
-├── popup.html            # Minimalist, semantic popup UI
-├── popup.js              # Pure client-side diagnostics and storage logic
-├── styles.css            # Dark theme styling (< 10KB)
-├── .gitignore
-└── README.md
-```
-
 ---
 
 ## 简体中文
@@ -97,7 +78,7 @@ zgyet/
 - 🔍 **DNS 服务器与安全防泄漏监测**：
   - 自动探测当前使用的递归 DNS 解析服务器真实 IP。
   - 毫秒级三段式动态响应延迟色彩提示（`<450ms` 极速绿，`450~1000ms` 中等黄，`>1000ms` 超时红）。
-  - 实时检测 **DNS 泄露与污染/劫持状态**（`🛡️ DNS 未泄露 · 纯净无污染` / `⚠️ 存在 DNS 泄露`）。
+  - 实时检测 **DNS 泄露与污染/劫持状态**（`DNS 未泄露 · 纯净无污染` / `存在 DNS 泄露`）。
 - 🏠 **常用局域网网关直达**：内置软路由地址、主路由地址、旁路由地址一键直达，支持自定义添加与回车快捷保存。
 - 🛠️ **网络排障指令速查**：内置常用网络命令（`ipconfig`, `tracert`, `nslookup`, `curl` 等），支持一键复制到剪贴板。
 - 🌐 **全自动多语言国际化**：内置 8 国语言包（简体中文、繁体中文、英语、日语、韩语、德语、西班牙语、法语），跟随系统语言自动切换。
@@ -142,25 +123,6 @@ zgyet/
 3. 开启页面右上角或左侧的 **“开发者模式”** 开关。
 4. 点击 **“加载已解压的扩展程序”**，选择本插件所在的文件夹。
 5. 在浏览器工具栏固定 **Zgyet** 图标即可随时使用！
-
-### 📂 项目目录结构
-```
-zgyet/
-├── _locales/              # 8 国语言国际化资源包 (en, zh_CN, ja, ko...)
-│   ├── en/messages.json
-│   ├── zh_CN/messages.json
-│   └── ...
-├── icons/                # 高分辨率插件图标 (16x16, 48x48, 128x128)
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-├── manifest.json         # Manifest V3 扩展核心配置文件
-├── popup.html            # 纯净语义化弹窗 UI
-├── popup.js              # 纯客户端网络探测与存储逻辑
-├── styles.css            # 紧凑暗黑主题样式 (< 10KB)
-├── .gitignore
-└── README.md
-```
 
 ---
 
