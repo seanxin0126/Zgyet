@@ -2,6 +2,9 @@
 *.pem
 *.crx
 *.zip
+release/
+dist/
+build/
 
 # OS temporary files
 .DS_Store
