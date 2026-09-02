@@ -57,7 +57,7 @@
    - **Microsoft Edge**: Navigate to `edge://extensions`
 3. **Enable "Developer Mode"** (toggle in the top-right / sidebar).
 4. **Load Unpacked Extension**:
-   - Click **"Load unpacked"** and select the `nethub` (or `zgyet`) folder.
+   - Click **"Load unpacked"** and select the `Zgyet` folder.
 5. **Pin to Toolbar**:
    - Click the extension icon in the toolbar for instant network diagnostics.
 
@@ -128,7 +128,7 @@
    - **Microsoft Edge**：地址栏输入 `edge://extensions`
 3. **开启右上角的“开发者模式”** 开关。
 4. **加载扩展程序**：
-   - 点击 **“加载已解压的扩展程序”** 按钮，选择 `nethub` 源码文件夹。
+   - 点击 **“加载已解压的扩展程序”** 按钮，选择 `Zgyet` 源码文件夹。
 5. **固定至工具栏**：
    - 在浏览器右上角扩展栏固定 **Zgyet** 图标，点击即可随时唤起网络诊断面板！
 
